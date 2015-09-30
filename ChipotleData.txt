@@ -1,0 +1,35 @@
+1. $ head -10 chipotle.tsv
+$ tail -10 chipotle.tsv
+The columns are order_id, quantity, item_name, choice_description and item_price
+Order_id gives the unique order number for items purchased, quantity specifies the number of items purchased for every order, item_name specifies the names of the items purchased, choice_description gives the 
+description of the items, item_price specifies the total price of the items purchased including the quantity.
+
+$ cut -f1,1 chipotle.tsv | uniq -c| wc -l
+1835
+The number of orders = 1835-1 = 1835
+
+$ wc -l chipotle.tsv
+4623 
+The number of lines = 4623 
+
+$ grep -i burrito chipotle.tsv | grep -i chicken | wc -l
+555 - Number of chicken burritos
+$ grep -i burrito chipotle.tsv | grep -i steak | wc -l
+370 - Number of steak burritos
+Chicken Burritos are more popular.
+
+$ grep -i burrito chipotle.tsv | grep -i chicken | grep -i black | grep -i beans | wc -l
+282 - Number of black beans chicken burritos
+$ grep -i burrito chipotle.tsv | grep -i chicken | grep -i pinto | grep -i beans | wc -l                                                                                                            
+106 - Number of pinto beans chicken burritos
+Black beans chicken burritos are more popular
+
+2. $ grep -r dictionary .|wc -l
+2 
+The word 'dicionary' appears 2 times
+
+3. $ cut -f 3 chipotle.tsv |sort| uniq -c | sort | tail -1
+    726 Chicken Bowl
+Chicken bowl is the most popular item. It was purchased 726 times.
+
+
