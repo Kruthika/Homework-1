@@ -2,7 +2,8 @@
 $ tail -10 chipotle.tsv
 The columns are order_id, quantity, item_name, choice_description and item_price
 Order_id gives the unique order number for items purchased, quantity specifies the number of items purchased for every order, item_name specifies the names of the items purchased, choice_description gives the 
-description of the items, item_price specifies the total price of the items purchased including the quantity.
+description of the items, item_price specifies the total price of the items purchased for every order including the quantity.
+A row represents the item purchased in an order.
 
 $ cut -f1,1 chipotle.tsv | uniq -c| wc -l
 1835
